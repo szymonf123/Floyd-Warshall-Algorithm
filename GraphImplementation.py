@@ -29,11 +29,9 @@ class Graph:
         return self._structure.keys()
 
     def list_edges(self):
-        L = []
         for source in self._structure:
             for (target, weight) in self._structure[source]:
-                L.append((source, target, weight))
-        return L
+                yield (source, target, weight)
     
     def print_graph(self):
         L = []
